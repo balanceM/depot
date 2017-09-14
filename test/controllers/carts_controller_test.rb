@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class CartsControllerTest < ActionDispatch::IntegrationTest
+  include CartsHelper
+
   setup do
     @cart = carts(:one)
   end
@@ -40,9 +42,9 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy cart" do
     assert_difference('Cart.count', -1) do
-      delete cart_url(@cart)
+      delete cart_url(@cart), params: {session: {cart_id: @cart.id}}
     end
 
-    assert_redirected_to carts_url
+    assert_redirected_to store_index_url
   end
 end
