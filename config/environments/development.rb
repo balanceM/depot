@@ -25,6 +25,7 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+  # config.action_mailer.delivery_method = :smtp
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -51,4 +52,26 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+end
+
+Depot::Application.configure do
+  # I recommend using this line to show error
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+    address: "smtp.qq.com", #"smtp.gmail.com",
+    port: 25,
+    # domain: "domain.of.sender.net",
+    # authentication: "plain",
+    # user_name: "dave",
+    # password: "secret",
+    # enable_starttls_auto: true
+    :authentication => :plain,
+
+    :user_name => "@qq.com",
+
+    :password => "lzxpitokhcipcafe"
+  }
 end
