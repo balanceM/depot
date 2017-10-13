@@ -59,7 +59,7 @@ Depot::Application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.delivery_method = :smtp
-  
+
   config.action_mailer.smtp_settings = {
     address: "smtp.qq.com", #"smtp.gmail.com",
     port: 25,
@@ -70,7 +70,7 @@ Depot::Application.configure do
     # enable_starttls_auto: true
     :authentication => :plain,
 
-    :user_name => "@qq.com",
+    :user_name => "286515744@qq.com",
 
     :password => "lzxpitokhcipcafe"
   }

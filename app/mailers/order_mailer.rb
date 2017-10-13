@@ -1,9 +1,9 @@
 class OrderMailer < ApplicationMailer
-  default from: '286515744@qq.com'
+  default from: '11111111@qq.com'
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
-  # => 
+  # =>
   #   en.order_mailer.received.subject
   #
   def received(order)
